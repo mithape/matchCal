@@ -40,7 +40,7 @@ public class mathCal extends CordovaPlugin {
                 int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
                 callBack.success(""+(p1+p2));
             }catch(Exception e) {
-                callBack.error("Something went wrong !" +ex);
+                callBack.error("Something went wrong !" +e);
             }
         }else {
             callBack.error("Please don't pass null value");

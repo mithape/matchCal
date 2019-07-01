@@ -18,9 +18,6 @@ public class mathCal extends CordovaPlugin {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
-        }else if(action.equals("add")) {
-            this.add(args,callbackContext);
-            return true;
         }
         return false;
     }
@@ -30,20 +27,6 @@ public class mathCal extends CordovaPlugin {
             callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
-        }
-    }
-
-    private void add(JSONArray args, CallbackContext callBack) {
-        if(args != null) {
-            try {
-                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
-                callBack.success(""+(p1+p2));
-            }catch(Exception e) {
-                callBack.error("Something went wrong !" +e);
-            }
-        }else {
-            callBack.error("Please don't pass null value");
         }
     }
 }

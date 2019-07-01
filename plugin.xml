@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-mathCal" version="1.0.0">
+   <name>mathCal</name>
+   <js-module name="mathCal" src="www/mathCal.js">
+      <clobbers target="mathCal" />
+   </js-module>
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="mathCal">
+            <param name="android-package" value="cordova.plugin.mathCal.mathCal" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+      <source-file src="src/android/mathCal.java" target-dir="src/cordova/plugin/mathCal/mathCal" />
+   </platform>
+   <platform name="ios">
+      <config-file parent="/*" target="config.xml">
+         <feature name="mathCal">
+            <param name="ios-package" value="mathCal" />
+         </feature>
+      </config-file>
+      <source-file src="src/ios/mathCal.m" />
+   </platform>
+</plugin>
